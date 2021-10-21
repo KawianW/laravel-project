@@ -1,0 +1,11 @@
+.mr-auto, .mx-auto{
+    margin-left: auto!important;
+    margin-right: 0!important;
+}
+.price {
+    width: fit-content;
+    float: left;
+}
+.card {
+    margin-top: 3rem;
+}
