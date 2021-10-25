@@ -67,4 +67,29 @@ class ProductController extends Controller
 
         return redirect()->route('index')->with($request->session()->flash('success', 'Payment successful!'));
     }
+
+    public function filter(Request $request) {
+        // Getting all products where category_id == input category
+        $products = Products::where('category_id', $request->categories)->get();
+        $categories = Categories::all();
+        return view('index', compact('products', $products), compact('categories', $categories));
+    }
+    
+    public function getReduceByOne(Request $request, $id) {
+        $cart = new Cart($request);
+        $cart->reduceByOne($id);
+        return redirect()->route('cart');
+    }
+
+    public function getAddByOne(Request $request, $id) {
+        $cart = new Cart($request);
+        $cart->addByOne($id);
+        return redirect()->route('cart');
+    }
+
+    public function getRemoveItem(Request $request, $id) {
+        $cart = new Cart($request);
+        $cart->removeItem($id);
+        return redirect()->route('cart');
+    }
 }
