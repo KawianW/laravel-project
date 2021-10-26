@@ -7,7 +7,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item pull-right">
         <a class="nav-link pull-right" href="{{route('cart')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-        <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+        <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''   }}</span>
       </li>
     </ul>
   </div>

@@ -21,8 +21,7 @@
                 <h5 class="card-title">{{ $product->title }}</h5>
                 <p class="card-text">{{ $product->description }}</p>
                 <p class="card-text">€{{ $product->price }}-,</p>
-                <a href="{{ route('addToCart', ['id' => $product->id]) }}" class="btn btn-primary" style="float:right">Add
-                    to cart</a>
+                <a href="{{ route('addToCart', ['id' => $product->id]) }}" class="btn btn-primary" style="float:right">Add to cart</a>
             </div>
         </div>
     @endforeach
